@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{%block content%}
+    <section class="vh-100" style="background-color: #d9d9d9;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <img
+                      src="https://capital-placement.b-cdn.net/wp-content/uploads/2019/10/2787860-e1571404666218.jpg"
+                      alt="login form"
+                      class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
+                    />
+                  </div>
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+      
+                      <form method='post'>
+                        {% csrf_token %} <!-- This is a security thing. -->
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                          <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                          <span class="h1 fw-bold mb-0"><img src="https://media.istockphoto.com/vectors/letter-p-icon-concept-vector-id845914336?k=20&m=845914336&s=612x612&w=0&h=rIB64bnBafy2HY8_efEesM5A2zBscZr8okKKZPcNeQY=" width="50" height="50" class="d-inline-block align-top" alt="">  &nbsp;ProjectMatch</span>
+                        </div>
+      
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create your account</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                {{form.first_name}}
+                                <label class="form-label" for="first_name">First name</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                {{form.last_name}} 
+                                <label class="form-label" for="lastname">Last name</label>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="form-outline mb-4">
+                          {{form.email}}
+                          <label class="form-label" for="email">Email</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                          {{form.password1}}
+                          <label class="form-label" for="password1">Password</label>
+                          <br>
+                          <p class="small text-muted">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+                        </div>
+                        <div class="form-outline mb-4">
+                            {{form.password2}}
+                            <label class="form-label" for="password2">Confirm</label>
+                          </div>
+                        <p style="font-style: italic; color: red"> {{signup_errors}} </p>
+                        <div class="pt-1 mb-4">
+                          <button class="btn btn-dark btn-lg btn-block" type="submit">Create Account</button>
+                        </div>
+      
+                        <p class="small text-muted" style="color: #595959;"><a href="{% url 'project_match:login'%}" style="color: #595959;">Sign in instead</a></p>
+                      
+                        <a href="#!" class="small text-muted">Terms of use.</a>
+                        <a href="#!" class="small text-muted">Privacy policy</a>
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

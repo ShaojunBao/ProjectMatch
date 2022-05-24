@@ -1,0 +1,3 @@
+*.pyc
+.\project_match\__pycache__\*.pyc
+.\project_match\landing\__pycache__\*.pyc
