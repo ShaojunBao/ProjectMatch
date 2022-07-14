@@ -51,7 +51,8 @@ def signup(request):
     message = "Your account has been created"
     return render(request, "landing/login.html", {"message": message } )
 
-         
+def create_project_screen(request):
+    return render(request, "landing/create_project.html")
 
     
 
